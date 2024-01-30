@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 #{title}
+  a(href='/new')
+    button(type='button') Create
+  ul
+    for message in messages
+      li
+        div
+          span.field User:
+          span.value #{message.user}
+        div
+          span.field Added:
+          span.value #{message.added}
+        div
+          span.field Text:
+          span.value #{message.text} 
